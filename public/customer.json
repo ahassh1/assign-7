@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Account login failure",
     "description": "User cannot log into the account even with the correct credentials.",
-    "customer": "Rahim Uddin",
+    "name": "Rahim Uddin",
     "priority": "High",
     "status": "Open",
     "createdAt": "2026-02-25"
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Email notification not sending",
     "description": "System fails to send confirmation emails after registration.",
-    "customer": "Nusrat Jahan",
+    "name": "Nusrat Jahan",
     "priority": "Medium",
     "status": "In Progress",
     "createdAt": "2026-02-26"
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "Broken image links",
     "description": "Product images are not displaying on the homepage.",
-    "customer": "Tanvir Hasan",
+    "name": "Tanvir Hasan",
     "priority": "Low",
     "status": "Open",
     "createdAt": "2026-02-27"
@@ -29,8 +29,8 @@
   {
     "id": 4,
     "title": "Checkout page crash",
-    "description": "Website crashes when customers try to complete checkout.",
-    "customer": "Ayesha Akter",
+    "description": "Website crashes when names try to complete checkout.",
+    "name": "Ayesha Akter",
     "priority": "Critical",
     "status": "Open",
     "createdAt": "2026-02-28"
@@ -39,7 +39,7 @@
     "id": 5,
     "title": "Password reset issue",
     "description": "Password reset link is not working properly.",
-    "customer": "Mahmudul Karim",
+    "name": "Mahmudul Karim",
     "priority": "High",
     "status": "Resolved",
     "createdAt": "2026-03-01"
@@ -48,7 +48,7 @@
     "id": 6,
     "title": "Search function slow",
     "description": "Search results take too long to appear.",
-    "customer": "Sadia Rahman",
+    "name": "Sadia Rahman",
     "priority": "Medium",
     "status": "In Progress",
     "createdAt": "2026-03-02"
@@ -57,7 +57,7 @@
     "id": 7,
     "title": "Mobile layout problem",
     "description": "Buttons overlap on smaller mobile screens.",
-    "customer": "Imran Hossain",
+    "name": "Imran Hossain",
     "priority": "Low",
     "status": "Open",
     "createdAt": "2026-03-03"
@@ -65,8 +65,8 @@
   {
     "id": 8,
     "title": "Payment confirmation delay",
-    "description": "Customers receive payment confirmation very late.",
-    "customer": "Farzana Islam",
+    "description": "names receive payment confirmation very late.",
+    "name": "Farzana Islam",
     "priority": "High",
     "status": "In Progress",
     "createdAt": "2026-03-03"
@@ -75,7 +75,7 @@
     "id": 9,
     "title": "Profile picture upload error",
     "description": "Users cannot upload a profile picture successfully.",
-    "customer": "Shakil Ahmed",
+    "name": "Shakil Ahmed",
     "priority": "Medium",
     "status": "Open",
     "createdAt": "2026-03-04"
@@ -84,7 +84,7 @@
     "id": 10,
     "title": "Language switch bug",
     "description": "Website language does not change after selecting another language.",
-    "customer": "Mariam Chowdhury",
+    "name": "Mariam Chowdhury",
     "priority": "Low",
     "status": "Resolved",
     "createdAt": "2026-03-05"
