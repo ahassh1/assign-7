@@ -1,6 +1,11 @@
 import React from "react";
 import TaskStatus from "./TaskStatus";
-const StatusCard = ({ selectedProgress, removeProgress }) => {
+const StatusCard = ({
+  selectedProgress,
+  removeProgress,
+  resolved,
+  setResolved,
+}) => {
   return (
     <div>
       <div>
@@ -10,6 +15,8 @@ const StatusCard = ({ selectedProgress, removeProgress }) => {
         {selectedProgress.length > 0 ? (
           selectedProgress.map((customer) => (
             <TaskStatus
+              resolved={resolved}
+              setResolved={setResolved}
               removeProgress={removeProgress}
               key={customer.id}
               customer={customer}

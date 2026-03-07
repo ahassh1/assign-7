@@ -1,7 +1,7 @@
 import React from "react";
 import leftVector from "../assets/vector1.png";
 
-const Banner = ({ progress }) => {
+const Banner = ({ progress, resolved }) => {
   return (
     <div className="w-11/12 mx-auto flex gap-6  md:gap-10 p-8 md:p-10 justify-center ">
       <div className="relative overflow-hidden w-100 h-30 md:w-200 md:h-42 flex-row md:flex-col rounded-md bg-gradient-to-r from-[#7F4CF1] to-[#A66BFF] flex items-center justify-center text-white ">
@@ -30,7 +30,7 @@ const Banner = ({ progress }) => {
           alt=""
         />
         <p className="text-xl md:text-lg font-semibold">Resolved</p>
-        <h1 className="font-semibold text-xl md:text-3xl">0</h1>
+        <h1 className="font-semibold text-xl md:text-3xl">{resolved}</h1>
       </div>
     </div>
   );

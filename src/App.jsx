@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [progress, setProgress] = useState(0);
+  const [resolved, setResolved] = useState(0);
   const [selectedProgress, setSelectedProgress] = useState([]);
   const removeProgress = (p) => {
     console.log(p);
@@ -19,8 +20,10 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Banner progress={progress}></Banner>
+      <Banner resolved={resolved} progress={progress}></Banner>
       <Customertic
+        resolved={resolved}
+        setResolved={setResolved}
         removeProgress={removeProgress}
         selectedProgress={selectedProgress}
         setSelectedProgress={setSelectedProgress}

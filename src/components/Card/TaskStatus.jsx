@@ -1,9 +1,10 @@
 import React from "react";
 
-const TaskStatus = ({ customer, removeProgress }) => {
+const TaskStatus = ({ customer, removeProgress, resolved, setResolved }) => {
   console.log(customer);
   const handleRemove = () => {
     removeProgress(customer);
+    setResolved(resolved + 1);
   };
   return (
     <div className="shadow-lg rounded-lg border border-gray-300  text-center mt-3 mb-1 p-3">
