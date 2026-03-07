@@ -8,6 +8,7 @@ const StatusCard = ({
   setResolved,
   selectedResolve,
   setSelectedResolve,
+  removeCard,
 }) => {
   return (
     <div>
@@ -23,6 +24,7 @@ const StatusCard = ({
               resolved={resolved}
               setResolved={setResolved}
               removeProgress={removeProgress}
+              removeCard={removeCard}
               key={customer.id}
               customer={customer}
             ></TaskStatus>

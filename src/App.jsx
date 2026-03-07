@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Customertic from "./components/Card/Customertic";
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -11,18 +12,25 @@ function App() {
   const [selectedProgress, setSelectedProgress] = useState([]);
   const [selectedResolve, setSelectedResolve] = useState([]);
   const removeProgress = (p) => {
-    console.log(p);
     const filteredData = selectedProgress.filter(
       (customer) => customer.id !== p.id,
     );
     setSelectedProgress(filteredData);
     setProgress(progress - 1);
   };
+
+  const removeCard = (c) => {
+    const filteredCard = selectedProgress.filter(
+      (customer) => customer.id !== c.id,
+    );
+    setSelectedProgress(filteredCard);
+  };
   return (
     <>
       <Navbar></Navbar>
       <Banner resolved={resolved} progress={progress}></Banner>
       <Customertic
+        removeCard={removeCard}
         selectedResolve={selectedResolve}
         setSelectedResolve={setSelectedResolve}
         resolved={resolved}
@@ -34,6 +42,7 @@ function App() {
         setProgress={setProgress}
       ></Customertic>
       <Footer></Footer>
+      <ToastContainer />
     </>
   );
 }

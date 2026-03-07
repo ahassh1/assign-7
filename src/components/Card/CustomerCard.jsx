@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const CustomerCard = ({
   customer,
@@ -8,10 +9,12 @@ const CustomerCard = ({
   setSelectedProgress,
 }) => {
   const [isSelected, setIsSelected] = useState(true);
+
   const handleProgress = (customer) => {
     setIsSelected(false);
     setProgress(progress + 1);
     setSelectedProgress([...selectedProgress, customer]);
+    toast.success("Ticket is now In-Progress!");
   };
   return (
     <div>

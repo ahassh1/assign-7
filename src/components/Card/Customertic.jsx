@@ -18,6 +18,7 @@ const Customertic = ({
   setResolved,
   selectedResolve,
   setSelectedResolve,
+  removeCard,
 }) => {
   return (
     <div className="w-11/12 mx-auto flex justify-around gap-2">
@@ -37,6 +38,7 @@ const Customertic = ({
       </Suspense>
       <div>
         <StatusCard
+          removeCard={removeCard}
           resolved={resolved}
           setResolved={setResolved}
           removeProgress={removeProgress}

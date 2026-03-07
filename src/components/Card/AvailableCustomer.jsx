@@ -10,7 +10,6 @@ const AvailableCustomer = ({
   removeProgress,
 }) => {
   const customerData = use(customerPromise);
-  // console.log(customerData);
 
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
