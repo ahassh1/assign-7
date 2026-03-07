@@ -1,10 +1,17 @@
 import React from "react";
 
-const TaskStatus = ({ customer, removeProgress, resolved, setResolved }) => {
-  console.log(customer);
-  const handleRemove = () => {
+const TaskStatus = ({
+  customer,
+  removeProgress,
+  resolved,
+  setResolved,
+  selectedResolve,
+  setSelectedResolve,
+}) => {
+  const handleRemove = (customer) => {
     removeProgress(customer);
     setResolved(resolved + 1);
+    setSelectedResolve([...selectedResolve, customer]);
   };
   return (
     <div className="shadow-lg rounded-lg border border-gray-300  text-center mt-3 mb-1 p-3">
@@ -12,7 +19,7 @@ const TaskStatus = ({ customer, removeProgress, resolved, setResolved }) => {
         {customer.title}
       </h1>
       <button
-        onClick={handleRemove}
+        onClick={() => handleRemove(customer)}
         className="bg-green-500 mt-1 cursor-pointer hover:bg-red-400 hover:text-white text-[12px]  text-white w-full rounded-md p-1"
       >
         Complete

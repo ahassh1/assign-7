@@ -9,6 +9,7 @@ function App() {
   const [progress, setProgress] = useState(0);
   const [resolved, setResolved] = useState(0);
   const [selectedProgress, setSelectedProgress] = useState([]);
+  const [selectedResolve, setSelectedResolve] = useState([]);
   const removeProgress = (p) => {
     console.log(p);
     const filteredData = selectedProgress.filter(
@@ -22,6 +23,8 @@ function App() {
       <Navbar></Navbar>
       <Banner resolved={resolved} progress={progress}></Banner>
       <Customertic
+        selectedResolve={selectedResolve}
+        setSelectedResolve={setSelectedResolve}
         resolved={resolved}
         setResolved={setResolved}
         removeProgress={removeProgress}
