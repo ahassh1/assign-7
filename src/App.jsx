@@ -8,11 +8,20 @@ import { useState } from "react";
 function App() {
   const [progress, setProgress] = useState(0);
   const [selectedProgress, setSelectedProgress] = useState([]);
+  const removeProgress = (p) => {
+    console.log(p);
+    const filteredData = selectedProgress.filter(
+      (customer) => customer.id !== p.id,
+    );
+    setSelectedProgress(filteredData);
+    setProgress(progress - 1);
+  };
   return (
     <>
       <Navbar></Navbar>
       <Banner progress={progress}></Banner>
       <Customertic
+        removeProgress={removeProgress}
         selectedProgress={selectedProgress}
         setSelectedProgress={setSelectedProgress}
         progress={progress}

@@ -7,6 +7,7 @@ const AvailableCustomer = ({
   progress,
   selectedProgress,
   setSelectedProgress,
+  removeProgress,
 }) => {
   const customerData = use(customerPromise);
   // console.log(customerData);
@@ -16,6 +17,7 @@ const AvailableCustomer = ({
       {customerData.map((customer) => (
         <CustomerCard
           key={customer.id}
+          removeProgress={removeProgress}
           selectedProgress={selectedProgress}
           setSelectedProgress={setSelectedProgress}
           setProgress={setProgress}

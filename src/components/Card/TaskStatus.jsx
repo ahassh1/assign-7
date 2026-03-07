@@ -1,13 +1,19 @@
 import React from "react";
 
-const TaskStatus = ({ customer }) => {
+const TaskStatus = ({ customer, removeProgress }) => {
   console.log(customer);
+  const handleRemove = () => {
+    removeProgress(customer);
+  };
   return (
     <div className="shadow-lg rounded-lg border border-gray-300  text-center mt-3 mb-1 p-3">
       <h1 className="font-semibold text-center text-gray-600 ">
         {customer.title}
       </h1>
-      <button className="bg-green-500 mt-1 cursor-pointer hover:bg-red-400 hover:text-white text-[12px]  text-white w-full rounded-md p-1">
+      <button
+        onClick={handleRemove}
+        className="bg-green-500 mt-1 cursor-pointer hover:bg-red-400 hover:text-white text-[12px]  text-white w-full rounded-md p-1"
+      >
         Complete
       </button>
     </div>

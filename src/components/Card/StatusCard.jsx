@@ -1,8 +1,6 @@
 import React from "react";
 import TaskStatus from "./TaskStatus";
-
-const StatusCard = ({ selectedProgress }) => {
-  console.log(selectedProgress);
+const StatusCard = ({ selectedProgress, removeProgress }) => {
   return (
     <div>
       <div>
@@ -11,7 +9,11 @@ const StatusCard = ({ selectedProgress }) => {
         </h1>
         {selectedProgress.length > 0 ? (
           selectedProgress.map((customer) => (
-            <TaskStatus key={customer.id} customer={customer}></TaskStatus>
+            <TaskStatus
+              removeProgress={removeProgress}
+              key={customer.id}
+              customer={customer}
+            ></TaskStatus>
           ))
         ) : (
           <p className="md:text-sm text-gray-400 text-[11px] mt-1">
@@ -20,6 +22,7 @@ const StatusCard = ({ selectedProgress }) => {
         )}
       </div>
       <div>
+        {/* resolve */}
         <h1 className="text-[15px] md:text-2xl mt-4 md:mt-6 text-gray-700 font-semibold">
           Resolved Task
         </h1>
@@ -30,5 +33,4 @@ const StatusCard = ({ selectedProgress }) => {
     </div>
   );
 };
-
 export default StatusCard;

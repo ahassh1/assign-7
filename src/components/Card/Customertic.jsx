@@ -13,6 +13,7 @@ const Customertic = ({
   progress,
   selectedProgress,
   setSelectedProgress,
+  removeProgress,
 }) => {
   return (
     <div className="w-11/12 mx-auto flex justify-around gap-2">
@@ -22,6 +23,7 @@ const Customertic = ({
         }
       >
         <AvailableCustomer
+          removeProgress={removeProgress}
           selectedProgress={selectedProgress}
           setSelectedProgress={setSelectedProgress}
           setProgress={setProgress}
@@ -30,7 +32,10 @@ const Customertic = ({
         ></AvailableCustomer>
       </Suspense>
       <div>
-        <StatusCard selectedProgress={selectedProgress}></StatusCard>
+        <StatusCard
+          removeProgress={removeProgress}
+          selectedProgress={selectedProgress}
+        ></StatusCard>
       </div>
     </div>
   );
