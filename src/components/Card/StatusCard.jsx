@@ -1,15 +1,23 @@
 import React from "react";
+import TaskStatus from "./TaskStatus";
 
-const StatusCard = () => {
+const StatusCard = ({ selectedProgress }) => {
+  console.log(selectedProgress);
   return (
     <div>
       <div>
         <h1 className="text-[15px] md:text-2xl text-gray-700 font-semibold">
           Task Status
         </h1>
-        <p className="md:text-sm text-gray-400 text-[11px] mt-1">
-          Select a ticket to add to Task Status
-        </p>
+        {selectedProgress.length > 0 ? (
+          selectedProgress.map((customer) => (
+            <TaskStatus key={customer.id} customer={customer}></TaskStatus>
+          ))
+        ) : (
+          <p className="md:text-sm text-gray-400 text-[11px] mt-1">
+            Select a ticket to add to Task Status
+          </p>
+        )}
       </div>
       <div>
         <h1 className="text-[15px] md:text-2xl mt-4 md:mt-6 text-gray-700 font-semibold">

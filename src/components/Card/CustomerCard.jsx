@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 
-const CustomerCard = ({ customer, setProgress, progress }) => {
+const CustomerCard = ({
+  customer,
+  setProgress,
+  progress,
+  selectedProgress,
+  setSelectedProgress,
+}) => {
   const [isSelected, setIsSelected] = useState(true);
-  const handleProgress = () => {
+  const handleProgress = (customer) => {
     setIsSelected(false);
     setProgress(progress + 1);
+    setSelectedProgress([...selectedProgress, customer]);
   };
   return (
     <div>
@@ -16,7 +23,7 @@ const CustomerCard = ({ customer, setProgress, progress }) => {
           <h3 className="mb-2 text-[16px] font-medium">{customer.title}</h3>
           <button
             onClick={() => {
-              handleProgress();
+              handleProgress(customer);
             }}
             className={`cursor-pointer p-1 rounded-lg text-[11px] ${isSelected ? "bg-green-300" : "bg-red-400 text-white"}`}
           >

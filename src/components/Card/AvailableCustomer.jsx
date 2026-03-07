@@ -1,7 +1,13 @@
 import React, { use } from "react";
 import CustomerCard from "./CustomerCard";
 
-const AvailableCustomer = ({ customerPromise, setProgress, progress }) => {
+const AvailableCustomer = ({
+  customerPromise,
+  setProgress,
+  progress,
+  selectedProgress,
+  setSelectedProgress,
+}) => {
   const customerData = use(customerPromise);
   // console.log(customerData);
 
@@ -10,6 +16,8 @@ const AvailableCustomer = ({ customerPromise, setProgress, progress }) => {
       {customerData.map((customer) => (
         <CustomerCard
           key={customer.id}
+          selectedProgress={selectedProgress}
+          setSelectedProgress={setSelectedProgress}
           setProgress={setProgress}
           progress={progress}
           customer={customer}

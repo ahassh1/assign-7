@@ -8,7 +8,12 @@ const fetchCustomer = async () => {
 };
 
 const customerPromise = fetchCustomer();
-const Customertic = ({ setProgress, progress }) => {
+const Customertic = ({
+  setProgress,
+  progress,
+  selectedProgress,
+  setSelectedProgress,
+}) => {
   return (
     <div className="w-11/12 mx-auto flex justify-around gap-2">
       <Suspense
@@ -17,13 +22,15 @@ const Customertic = ({ setProgress, progress }) => {
         }
       >
         <AvailableCustomer
+          selectedProgress={selectedProgress}
+          setSelectedProgress={setSelectedProgress}
           setProgress={setProgress}
           progress={progress}
           customerPromise={customerPromise}
         ></AvailableCustomer>
       </Suspense>
       <div>
-        <StatusCard></StatusCard>
+        <StatusCard selectedProgress={selectedProgress}></StatusCard>
       </div>
     </div>
   );
